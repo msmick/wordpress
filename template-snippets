@@ -1,6 +1,6 @@
 Wordpress Snippets for Template Creation (PHP mostly)
 
-// Stylesheet
+// Stylesheet =================================================
 
 /*
 Theme Name: nameHere
@@ -14,15 +14,103 @@ Tags: custom
 Text Domain: none
 */
 
-// Header(.php)
+// Header(.php)   =================================================
+
+<?php
+/**
+ * Header File
+ * @package WordPress
+ * @subpackage YourSiteNameHere
+ * @since YourVersion 1.0
+ */
+?>
+
+ <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/filename.css">
+ <script src="<?php bloginfo('template_directory'); ?>/javascripts/script-example.js"></script>
+ 
+ 
+ <title><?php wp_title(); ?></title> // you can use wordpress seo to override this well
 
 
-// Page
+// Page  =================================================
 
-// Menu
+<?php
+/**
+ * Page Template
+ * Template Name: YourTemplateName //this shows up in dropdown in dashboard
+ * @package WordPress
+ * @subpackage YourSiteNameMaybe
+ * @since 1.0
+ */
+get_header(); ?>
 
-// Widgets
+
+  //example hard link to page
+  <a href="<?php bloginfo('url'); ?>/your-page-name/">LinkName or Image src here</a>
+
+// Menu  =================================================
+
+<ul>
+      <?php wp_nav_menu(
+          array(
+            'theme_location' => 'your-example-name',
+            'container' => '',
+            'items_wrap' => '%3$s'
+        )); ?>
+ </ul>
+
+// Widgets  =================================================
+
+    //make sure this matches functions.php widget name below
+<?php
+    if(is_active_sidebar('sidebar-1')){
+    dynamic_sidebar('sidebar-1');
+         }
+?>
 
 // Footer(.php)
 
-// Functions(.php)
+<?php
+/**
+ * Footer Include
+ * @package WordPress
+ * @subpackage YourSiteName
+ * @since Bahn 1.0
+ */
+?>
+
+    //this should be last thing before body close tag
+    <?php wp_footer(); ?>
+
+// Functions(.php) =================================================
+
+    //menu registration multiple menu array
+    
+    <?php
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'about-us' => __( 'About Us' ),
+            'friends-of-mine' => __( 'Friends of Mine' ),
+            'music' => __( 'Music' )
+        )
+    );
+}
+add_action( 'init', 'register_my_menus' );
+?>
+
+=====================================================
+
+    //widget registration 
+<?php
+register_sidebar( array(
+    'name' => 'Sidebar 1',
+    'id' => 'sidebar-1',
+    'description' => 'Appears in the footer area',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h3 class="widget-title-1">',
+    'after_title' => '</h3>',
+) );
+?>
+
