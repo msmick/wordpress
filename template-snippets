@@ -3,13 +3,13 @@ Wordpress Snippets for Template Creation (PHP mostly)
 // Stylesheet
 
 /*
-Theme Name: RothClinic
-Theme URI: http://rothclinic.com
+Theme Name: nameHere
+Theme URI: http://example.com
 Author: Mike Smick
 Author URI: http://openground.co/
-Description: Roth Clinic Bi-lingual Therapy website
-License: Proprietary
-License URI:
+Description: DescriptionHere whatever you like
+License: LicenseHere proprietary? Open? CC?
+License URI: http://examplelicense.org
 Tags: custom
 Text Domain: none
 */
