@@ -1,0 +1,21 @@
+Wordpress Snippets for Template Creation (PHP mostly)
+
+// Stylesheet
+
+/*
+Theme Name: RothClinic
+Theme URI: http://rothclinic.com
+Author: Mike Smick
+Author URI: http://openground.co/
+Description: Roth Clinic Bi-lingual Therapy website
+License: Proprietary
+License URI:
+Tags: custom
+Text Domain: none
+*/
+
+// Header
+
+// Page
+
+// Footer
