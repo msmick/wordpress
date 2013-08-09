@@ -14,12 +14,15 @@ Tags: custom
 Text Domain: none
 */
 
-// Header
+// Header(.php)
+
 
 // Page
 
+// Menu
+
 // Widgets
 
-// Footer
+// Footer(.php)
 
 // Functions(.php)
