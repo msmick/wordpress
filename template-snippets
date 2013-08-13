@@ -70,7 +70,7 @@ get_header(); ?>
   
     // a default banner image with ability to override with featured image 
     <?php if ( has_post_thumbnail() ) {
-    the_post_thumbnail('full');
+    the_post_thumbnail('full', array('class' => 'whatever-class'));
 } else { ?>
     <img src="<?php bloginfo('template_directory'); ?>/images/default-page-banner.jpg" alt="<?php the_title(); ?>" />
     <?php } ?>
