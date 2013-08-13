@@ -30,6 +30,10 @@ Text Domain: none
  
  
  <title><?php wp_title(); ?></title> // you can use wordpress seo to override this well
+ 
+  //blog title and sub title used as headlines / subheads
+   <h1 class="blog-title"><?php bloginfo('name'); ?></h1>
+   <h2 class="blog-description"><?php bloginfo('description'); ?></h2>
 
 
 // Page  =================================================
