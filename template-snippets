@@ -63,6 +63,13 @@ get_header(); ?>
                     
   // title of post with permalink 
   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+  
+    // a default banner image with ability to override with featured image 
+    <?php if ( has_post_thumbnail() ) {
+    the_post_thumbnail('full');
+} else { ?>
+    <img src="<?php bloginfo('template_directory'); ?>/images/default-page-banner.jpg" alt="<?php the_title(); ?>" />
+    <?php } ?>
 
 // Menu  =================================================
 
@@ -129,4 +136,6 @@ register_sidebar( array(
     'after_title' => '</h3>',
 ) );
 ?>
-
+======================================================
+  //add featured image support
+  <?php add_theme_support( 'post-thumbnails' ); ?>
