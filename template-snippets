@@ -95,6 +95,33 @@ get_header(); ?>
          }
 ?>
 
+// Blog post query outside loop =============================
+//this query grabs the title and an excerpt of the latest 5 posts and links to the real post
+
+<?php
+
+// The Query
+$the_query = new WP_Query( array( 'posts_per_page' => 5 ) );
+
+// The Loop
+while ( $the_query->have_posts() ) : $the_query->the_post();
+	echo '<a class="front-pg-blog-post-hdrs" title="Click to read this post" href="';
+	the_permalink();
+	echo '">';
+	echo '<h4>';
+	the_title();
+	echo '</h4>';
+	echo '</a>';
+	echo '<span class="front-post-excerpt">';
+	the_excerpt();
+	echo '</span>';
+endwhile;
+
+// Reset Post Data
+wp_reset_postdata();
+
+?>
+
 // Footer(.php)
 
 <?php
