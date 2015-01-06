@@ -30,6 +30,11 @@ Text Domain: none
  
  
  <title><?php wp_title(); ?></title> // you can use wordpress seo to override this well
+
+// put call to wp head just above the </head> closing tag. This may be essential to some plugins 
+// and also brings in the admin bar onto the page.
+<?php wp_head(); ?>
+
  
   //blog title and sub title used as headlines / subheads
    <h1 class="blog-title"><?php bloginfo('name'); ?></h1>
